@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CreateElement.js - Styling Element</title>
+  <style>
+    .btn{
+      border-radius:4px;
+      background:none;
+      outline:none;
+      color:#333;
+      border:2px solid #333;
+      padding:1em 2em;
+      cursor:pointer;
+      transition: all .5s ease;
+    }
+    .btn:hover{
+      background:#333;
+      color:#fff;
+    }
+    .animation-block{
+      width:300px;
+      height:300px;
+      background: red;
+      padding:1em;
+    }
+    .animate{
+      animation: colorEffect 3s ease infinite alternate;
+    }
+    @keyframes colorEffect{
+        0%{
+          background:red;
+          color:violet;
+        }
+        15%{
+          background:orange;
+          color:indigo;
+        }
+        30%{
+          background:yellow;
+          color:blue;
+        }
+        50%{
+          background:green;
+          color:black;
+        }
+        70%{
+          background:blue;
+          color:yellow;
+        }
+        90%{
+          background:indigo;
+          color:orange;
+        }
+        100%{
+          background:violet;
+          color:red;
+        }
+    }
+  </style>
+</head>
+<body>
+  <p style="font-style:italic">Inspect the created element in the developers' tool</p>
+  <div id="output"></div>
+  <script src="../dist/create_element.min.js"></script>
+  <script>
+    // Create a button element
+    let btn = createElement({
+      type:'button',
+      id:'play-btn',
+      text:'Start Animation',
+      classes:['btn'],
+      parent:'#output'
+    });
+    // Create an horizontal rule
+    createElement({
+      type:'hr',
+      parent:'#output'
+    });
+    // Create a div element
+    let divBlock = createElement({
+      type:'div',
+      text:'Press the start button to start the animation',
+      parent:'#output',
+      classes:['animation-block']
+    });
+    // Event Handler
+    btn.onclick = function(){
+      if(!divBlock.classList.contains('animate')){
+        divBlock.classList.add('animate');
+        divBlock.textContent = "Press the stop button to stop the animation";
+        btn.textContent = 'Stop Animation';
+      } else {
+        divBlock.classList.remove('animate');
+        divBlock.textContent = "Press the start button to start the animation";
+        btn.textContent = 'Start Animation';
+      }
+    }
+  </script>
+</body>
+</html>

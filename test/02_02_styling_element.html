@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CreateElement.js - Styling Element</title>
+</head>
+<body>
+  <p style="font-style:italic">Inspect the created element in the developers' tool</p>
+  <div id="output"></div>
+  <script src="../dist/create_element.min.js"></script>
+  <!-- INLINE STYLING -->
+  <script>
+    // Create a simple div
+    createElement({
+      type:'div',
+      id:'lorem-ipsum',
+      text:'Hello World',
+      inlineStyles:{
+        backgroundColor:'green',
+        padding:'2em',
+        color:'#fff'
+      },
+      parent:'#output'
+    });
+    // Create an horizontal rule
+    createElement({
+      type:'hr',
+      parent:'#output'
+    });
+    // Create a button
+    createElement({
+      type:'button',
+      text:'Submit',
+      inlineStyles:{
+        backgroundColor:'teal',
+        color:'white',
+        borderRadius:'4px',
+        padding:'1em',
+        border:'none'
+      },
+      parent:'#output'
+    });
+    // Create an horizontal rule
+    createElement({
+      type:'hr',
+      parent:'#output'
+    });
+    // Create an input element
+    createElement({
+      type:'input',
+      parent:'#output',
+      inlineStyles:{
+        padding:'1em .5em',
+        color:'red'
+      }
+    });
+    // Create an horizontal rule
+    createElement({
+      type:'hr',
+      parent:'#output'
+    });
+    // Append text using innerHtml
+    createElement({
+      type:'div',
+      html:'&copy; 2019 <a href="bit.ly/yinkaenoch" target="_blank">Yinka Enoch Adedokun<a/>',
+      parent:'#output',
+      inlineStyles:{
+        backgroundColor:'#999',
+        color:'#fff',
+        padding:'.5em'
+      }
+    });
+  </script>
+</body>
+</html>

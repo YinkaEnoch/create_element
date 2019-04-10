@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CreateElement.js - Demo</title>
+  <style>
+    *{
+      box-sizing:border-box;
+      line-height:1.5;
+    }
+    p{
+      text-align:center;
+      font-weight:800;
+      font-size:1.5em;
+    }
+    #output{
+      margin:2em auto;
+      padding:1em;
+      background:#ccc;
+      width:90%;
+      box-shadow: 2px 5px 5px rgba(0,0,0,.6);
+    }
+    .form_group{
+      margin:1em auto;
+    }
+    label{
+      font-weight:600;
+      text-transform:uppercase;
+      display:block;
+      margin-bottom:.5em;
+    }
+    [type='text']{
+      width:100%;
+      outline:none;
+      padding:1em .5em;
+      transition: all .5s ease;
+    }
+    button{
+      display:block;
+      margin:3em auto 1em;
+      padding:1em 1.5em;
+      border-radius:4px;
+      border:1px solid #333;
+      color:#333;
+      background:none;
+      outline:none;
+      cursor:pointer;
+    }
+    button:hover,button:focus{
+      background:#333;
+      color:#efefef;
+    }
+    .active{
+      font-size:1.25em;
+      font-weight:600;
+      color:#000;
+    }
+    @media screen and (min-width:800px){
+      #output{
+        width:50%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <p>A simple temperature converter</p>
+  <div id="output"></div>
+  <script src="../dist/create_element.min.js"></script>
+  <script>
+    let output = document.querySelector('#output');
+    // Container
+    createElement({
+      type:'div',
+      classes:['container'],
+      parent:output
+    });
+    // Fahrenheit Container
+    createElement({
+      type:'div',
+      id:'fah',
+      classes:['form_group'],
+      parent:'.container'
+    });
+    // Fahrenheit Label
+    createElement({
+      type:'label',
+      text:'Fahrenheit',
+      otherAttr:{
+        for:'fah_entry'
+      },
+      parent:'#fah'
+    });
+    // Fahrenheit Input
+    let fahEntry = createElement({
+      type:'input',
+      otherAttr:{
+        type:'text',
+        name:'fah_entry',
+        id:'fah_entry',
+        placeholder:'Fahrenheit degree'
+      },
+      parent:'#fah'
+    });
+    // Celcius Container
+    createElement({
+      type:'div',
+      id:'cel',
+      classes:['form_group'],
+      parent:'.container'
+    });
+    // Celcius Label
+    createElement({
+      type:'label',
+      text:'Celcius',
+      otherAttr:{
+        for:'cel_entry'
+      },
+      parent:'#cel'
+    });
+    // Celcius Input
+    let celEntry = createElement({
+      type:'input',
+      otherAttr:{
+        type:'text',
+        name:'cel_entry',
+        id:'cel_entry',
+        placeholder:'Celcius degree'
+      },
+      parent:'#cel'
+    });
+    // Reset Button
+    let resetBtn = createElement({
+      type:'button',
+      text:'Reset',
+      parent:'#output'
+    });
+
+    // App Logic
+    fahEntry.onkeyup = function(){
+      // Reset fahEntry Styling
+      fahEntry.classList.remove('active');
+      // Style celEntry
+      celEntry.classList.add('active');
+      // Compute temperature
+      celEntry.value = Math.round((parseFloat(fahEntry.value) - 32) * (5/9));
+    }
+    
+    celEntry.onkeyup = function(){
+      // Reset celEntry Styling
+      celEntry.classList.remove('active');
+      // Style fahEntry
+      fahEntry.classList.add('active');
+      // Compute Temperature
+      fahEntry.value = Math.round((parseFloat(celEntry.value) * (9/5)) + 32);
+    }
+
+    resetBtn.onclick = function(){
+      fahEntry.value = '';
+      fahEntry.classList.remove('active');
+      celEntry.value = '';
+      celEntry.classList.remove('active');
+    }
+  </script>
+</body>
+</html>

@@ -1,18 +1,26 @@
 {
-  "name": "createElement",
+  "name": "create_new_element",
   "version": "1.0.0",
   "description": "A simple HTML element crafting library",
   "main": "./src/create_element.js",
   "scripts": {
-    "build":"babel ./src/create_element.js -o dist/create_element.min.js",
-    "dev":"babel --watch ./src/create_element.js -o dist/create_element.min.js"
+    "build": "babel ./src/create_element.js -o dist/create_element.min.js",
+    "dev": "babel --watch ./src/create_element.js -o dist/create_element.min.js"
   },
   "devDependencies": {
-    "@babel/cli":"7.2.3",
-    "@babel/core":"7.3.4",
-    "@babel/preset-env":"7.3.4"
-	},
-  "keywords": ["DOM","Element", "HTML","HTML Element"],
+    "@babel/cli": "7.2.3",
+    "@babel/core": "7.3.4",
+    "@babel/preset-env": "7.3.4",
+    "jest": "^26.3.0",
+    "typescript": "^3.9.7"
+  },
+  "keywords": [
+    "DOM",
+    "Element",
+    "HTML",
+    "HTML Element"
+  ],
   "author": "Yinka Enoch Adedokun",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {}
 }

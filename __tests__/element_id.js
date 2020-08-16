@@ -4,8 +4,8 @@ const createNewElement = require("../src/index.ts");
 test("Element has an id", () => {
   let newElement = createNewElement({
     elementType: "span",
-    elementId: "anchor",
+    elementId: "container",
   });
 
-  expect(newElement.id).toEqual("anchor");
+  expect(newElement.id).toEqual("container");
 });

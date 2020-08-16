@@ -1,6 +1,6 @@
 const createNewElement = require("../src/index.ts");
 
-// Create an simple div element with text
+// Create a simple div element with text
 test("create a div element", () => {
   let newElement = createNewElement({
     elementType: "div",

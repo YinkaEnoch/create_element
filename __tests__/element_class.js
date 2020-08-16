@@ -1,6 +1,6 @@
 const createNewElement = require("../src/index.ts");
 
-// Check if an element has a class attribute
+// Check if element has a class attribute
 test("Element has a class attribute", () => {
   let newElement = createNewElement({
     elementType: "span",

@@ -38,7 +38,6 @@ const createHTMLElement = (params: ElementInterface) => {
 
   // Create SVG Element
   if (elementType && elementType.toLowerCase() === "svg") {
-    a;
     newElement = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 
     // SVG ViewBox

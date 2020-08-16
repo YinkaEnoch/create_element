@@ -41,6 +41,23 @@ createElement({
 
 ---
 
+## Add a name to the element
+
+```
+createElement({
+  elementType:'div',
+  elementName:'container'
+});
+```
+
+**OUTPUT**
+
+```
+<div name="container"></div>
+```
+
+---
+
 ## Add text to the element
 
 ```

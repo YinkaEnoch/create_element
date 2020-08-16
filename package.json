@@ -2,25 +2,43 @@
   "name": "create_new_element",
   "version": "1.0.0",
   "description": "A simple HTML element crafting library",
-  "main": "./src/create_element.js",
   "scripts": {
-    "build": "babel ./src/create_element.js -o dist/create_element.min.js",
-    "dev": "babel --watch ./src/create_element.js -o dist/create_element.min.js"
+    "start": "npx tsc"
   },
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
   "devDependencies": {
     "@babel/cli": "7.2.3",
     "@babel/core": "7.3.4",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/preset-env": "7.3.4",
+    "@babel/preset-typescript": "^7.10.4",
     "jest": "^26.3.0",
     "typescript": "^3.9.7"
   },
   "keywords": [
-    "DOM",
-    "Element",
     "HTML",
-    "HTML Element"
+    "HTML Element",
+    "modular",
+    "functional"
   ],
-  "author": "Yinka Enoch Adedokun",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YinkaEnoch/create_new_element.git"
+  },
+  "author": {
+    "name": "Yinka Enoch Adedokun",
+    "email": "adedokunyinkaenoch@gmail.com",
+    "url": "https://yinkaenoch.github.io"
+  },
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {},
+  "bugs": {
+    "url": "https://github.com/YinkaEnoch/create_new_element/issues"
+  },
+  "homepage": "https://github.com/YinkaEnoch/create_new_element#readme"
 }

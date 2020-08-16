@@ -114,4 +114,5 @@ const createHTMLElement = (params: ElementInterface) => {
   return newElement;
 };
 
-export default createHTMLElement;
+// export default createHTMLElement;
+module.exports = createHTMLElement;

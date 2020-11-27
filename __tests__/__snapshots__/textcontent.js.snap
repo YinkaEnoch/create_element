@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`add text to a span element 1`] = `
+<span
+  class="red-text"
+  id="author"
+>
+  Yinka Enoch Adedokun
+</span>
+`;

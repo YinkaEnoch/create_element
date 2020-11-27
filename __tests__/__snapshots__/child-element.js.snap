@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`add items to an unordered list 1`] = `
+<ul
+  id="state-of-origin"
+>
+  <li
+    class="grey-text"
+  >
+    Oyo
+  </li>
+  <li>
+    Osun
+  </li>
+  <li>
+    Ogun
+  </li>
+  <li>
+    Ondo
+  </li>
+</ul>
+`;

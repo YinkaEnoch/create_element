@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`create a button with listener handler 1`] = `
+<button
+  class="btn-success"
+  type="button"
+/>
+`;
+
+exports[`create a div element with multiple classes 1`] = `
+<div
+  class="text-right text-primary bg-dark"
+/>
+`;
+
+exports[`create a label element 1`] = `
+<label
+  for="fullname"
+/>
+`;
+
+exports[`create a paragraph with class 1`] = `
+<p
+  class="text-center"
+/>
+`;
+
+exports[`create an header with id 1`] = `
+<h1
+  id="mast"
+/>
+`;
+
+exports[`create an input element 1`] = `
+<input
+  id="fullname"
+  name="fullname"
+  placeholder="Your full name"
+  required="true"
+  type="text"
+/>
+`;

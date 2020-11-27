@@ -29,9 +29,8 @@ const createHTMLElement = (
   }
 
   // Add children element
-  if (children instanceof Array) {
+  children instanceof Array &&
     children.forEach((child) => newElement.appendChild(child));
-  }
 
   return newElement;
 };

@@ -1,10 +1,10 @@
 const createHTMLElement = (
   elemType: string = "div",
-  attr?: {} = {},
+  attr: {} = {},
   children?: string | []
 ) => {
-  //  Create HTML element
-  let newElement = document.createElement(elemType);
+  //  Element variable
+  let newElement;
 
   // Create SVG or path element
   if (elemType.toLowerCase() === "svg" || elemType.toLowerCase() === "path") {
@@ -12,6 +12,9 @@ const createHTMLElement = (
       "http://www.w3.org/2000/svg",
       elemType
     );
+  } else {
+    //  Create HTML element
+    newElement = document.createElement(elemType);
   }
 
   // Add attributes
